@@ -12,7 +12,7 @@ import Kotor from './pages/kotor/Kotor'
 import CommentSection from './components/CommentSection'
 
 
-axios.defaults.baseURL = 'https://gamewalkthroughs-api.onrender.com'
+axios.defaults.baseURL = "https://gamewalkthroughs-api.onrender.com"
 axios.defaults.withCredentials = true
 
 
@@ -27,13 +27,9 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Dashboard />} />
         <Route path="/kotor" element={<Kotor />} />
-        <Route path="/comments/:postId">
-        {({ match }) => (
-          <div>
-            <CommentSection postId={match.params.postId} />
-          </div>
-        )}
-        </Route>
+        <Route path="/comments/" element={<CommentSection />} />
+        
+        
         
       </Routes>
 

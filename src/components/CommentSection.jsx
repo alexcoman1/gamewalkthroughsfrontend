@@ -10,6 +10,7 @@ export default function CommentSection() {
 
     useEffect(() => {
         const fetchComments = async () => {
+            
             try {
                 const response = await axios.get('/comments/')
                 setComments(response.data)
@@ -29,7 +30,12 @@ export default function CommentSection() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/comments', {text})
+            const token = document.cookie.split('; ').find(row => row.startsWith('token')).split('=')[1]
+            const response = await axios.post('/comments', {text}, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
             setComments([...comments, response.data.comment])
             
             setText('')
