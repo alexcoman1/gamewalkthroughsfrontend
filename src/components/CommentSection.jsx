@@ -29,18 +29,30 @@ export default function CommentSection() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const token = document.cookie.split('; ').find(row => row.startsWith('token')).split('=')[1]
-            const response = await axios.post('/comments', {text}, {
-                headers: {
-                    'Authorization': `Bearer ${token}`
-                }
-            })
-            setComments([...comments, response.data.comment])
-            
-            setText('')
-        } catch (error) {
-            console.error('An error occurred while posting a comment:', error)
+        const getCookie = (name) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+            return null;
+        }
+    
+        const token = getCookie('token');
+    
+        if (token) {
+            try {
+                const response = await axios.post('/comments', {text}, {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                })
+                setComments([...comments, response.data.comment])
+                setText('')
+            } catch (error) {
+                console.error('An error occurred while posting a comment:', error)
+            }
+        } else {
+            console.error('Token not found');
+            // Handle error here, e.g., show an error message to the user
         }
     }
 
