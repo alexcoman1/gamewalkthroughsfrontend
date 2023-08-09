@@ -11,7 +11,9 @@ export function UserContextProvider({children}) {
                 setUser(data)
             })
         }
-    }, [])
+    }, [user])
+
+    console.log('User context value:', user);
 
         return (
             <UserContext.Provider value={{user, setUser}}>
