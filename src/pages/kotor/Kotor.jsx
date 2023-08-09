@@ -16,7 +16,7 @@ export default function Kotor() {
       </div>
 
       <div className="videoplayer">
-          <iframe src="https://www.youtube.com/embed/NqLdbPbRjPg" title="charactercreation" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen ></iframe>
+          <iframe src="" title="charactercreation" frameBorder="0" allow="autoplay; encrypted-media" allowFullScreen ></iframe>
       </div>
 
       <div className="walkthrough-text">
