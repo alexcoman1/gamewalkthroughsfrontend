@@ -37,13 +37,15 @@ export default function CommentSection() {
         }
     
         const token = getCookie('token');
+        console.log('Retrieved token:', token)
     
         if (token) {
             try {
                 const response = await axios.post('/comments', {text}, {
                     headers: {
                         'Authorization': `Bearer ${token}`
-                    }
+                    },
+                    withCredentials: true
                 })
                 setComments([...comments, response.data.comment])
                 setText('')
