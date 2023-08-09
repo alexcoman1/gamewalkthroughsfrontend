@@ -1,14 +1,14 @@
 import CommentPost from './CommentPost';
-import { useState, useEffect, UseContext } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios'
-import { UserContext } from '../../context/userContext';
+
 
 
 export default function CommentSection() {
     const [comments, setComments] = useState([]);
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(true)
-    const { user, setUser } = UseContext(UserContext) 
+    
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -41,7 +41,7 @@ export default function CommentSection() {
         const token = getCookie('token');
         console.log('Retrieved token:', token)
     
-    
+        
             try {
                 const response = await axios.post('/comments', {text}, {
                     headers: {
@@ -54,7 +54,6 @@ export default function CommentSection() {
             } catch (error) {
                 console.error('An error occurred while posting a comment:', error)
             }
-       
         
     }
 
