@@ -1,12 +1,14 @@
 import CommentPost from './CommentPost';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, UseContext } from 'react';
 import axios from 'axios'
+import { UserContext } from '../../context/userContext';
 
 
 export default function CommentSection() {
     const [comments, setComments] = useState([]);
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(true)
+    const { user, setUser } = UseContext(UserContext) 
 
     useEffect(() => {
         const fetchComments = async () => {
@@ -39,7 +41,7 @@ export default function CommentSection() {
         const token = getCookie('token');
         console.log('Retrieved token:', token)
     
-        if (token) {
+    
             try {
                 const response = await axios.post('/comments', {text}, {
                     headers: {
@@ -52,10 +54,8 @@ export default function CommentSection() {
             } catch (error) {
                 console.error('An error occurred while posting a comment:', error)
             }
-        } else {
-            console.error('Token not found');
-            // Handle error here, e.g., show an error message to the user
-        }
+       
+        
     }
 
     if (loading) return <div>Loading...</div>
