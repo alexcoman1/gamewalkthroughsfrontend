@@ -9,7 +9,13 @@ export default function Dashboard() {
     useEffect(() => {
         const fetchProfile = async () => {
             try {
-                const token = document.cookie.split(';').find(row => row.startsWith('token')).split('=')[1];
+                const tokenRow = document.cookie.split(';').find(row => row.startsWith('token'))
+                const token = tokenRow ? tokenRow.split('=')[1] : null;
+                if (!token) {
+                    console.error('Token not found');
+                    setLoading(false);
+                    return;
+            }
                 const response = await axios.get('/profile', {
                     headers: {
                         'Authorization': `Bearer ${token}`

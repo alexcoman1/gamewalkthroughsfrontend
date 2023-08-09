@@ -10,6 +10,7 @@ import { UserContextProvider } from '../context/userContext'
 import Dashboard from './pages/Dashboard'
 import Kotor from './pages/kotor/Kotor'
 import CommentSection from './components/CommentSection'
+import Logout from './components/Logout'
 
 
 axios.defaults.baseURL = "https://gamewalkthroughs-api.onrender.com"
@@ -28,7 +29,7 @@ function App() {
         <Route path="/profile" element={<Dashboard />} />
         <Route path="/kotor" element={<Kotor />} />
         <Route path="/comments/" element={<CommentSection />} />
-        
+        <Route path="/logout" element={<Logout />} />
         
         
       </Routes>

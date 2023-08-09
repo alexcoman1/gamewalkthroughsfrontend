@@ -69,7 +69,7 @@ export default function CommentSection() {
     
         const token = getCookie('token');
         console.log('Retrieved token:', token)
-        
+
         try {
             await axios.delete(`/comments/${commentId}`, {
                 headers: {
@@ -104,7 +104,7 @@ export default function CommentSection() {
 
                     <p className="author-name">{comment.author ? comment.author.name : 'Anonymous'}</p>
                     <CommentPost {...comment} />
-                    {comment.author && comment.author._id === user.id && (
+                    {comment.author && user && comment.author._id === user.id && (
                         <button onClick={() => handleDelete(comment._id)}>Delete</button>
                     )}
                 </div>

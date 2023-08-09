@@ -33,7 +33,7 @@ export default function Login() {
 
   return (
     <div>
-      <form on onSubmit={loginUser}>
+      <form onSubmit={loginUser}>
         <label>Email</label>
           <input type="email" placeholder='enter email...' value={data.email} onChange={(e) => setData({...data, email: e.target.value})} />
           <label>Password</label>
