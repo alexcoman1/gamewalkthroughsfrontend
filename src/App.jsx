@@ -14,7 +14,7 @@ import Logout from './components/Logout'
 import Kotor from './pages/kotor/Kotor'
 import Chapter1 from './pages/kotor/Chapter1'
 
-import Cyberpunk from './pages/cyberpunk/cyberpunk'
+import Cyberpunk from './pages/cyberpunk/Cyberpunk'
 
 
 
@@ -38,7 +38,7 @@ function App() {
 
         <Route path="/kotor" element={<Kotor />} />
         <Route path="/kotor/chapter1" element={<Chapter1 />} />
-        
+
         <Route path="/cyberpunk" element={<Cyberpunk />} />
         
         
