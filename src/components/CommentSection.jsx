@@ -5,7 +5,7 @@ import { UserContext } from '../../context/userContext';
 
 
 
-export default function CommentSection() {
+export default function CommentSection(props) {
     const [comments, setComments] = useState([]);
     const [text, setText] = useState('');
     const [loading, setLoading] = useState(true)
@@ -16,7 +16,7 @@ export default function CommentSection() {
         const fetchComments = async () => {
             
             try {
-                const response = await axios.get('/comments/')
+                const response = await axios.get(`/comments?page=${props.pageIdentifier}`)
                 setComments(response.data)
                 setLoading(false)
             } catch (error) {
@@ -26,7 +26,7 @@ export default function CommentSection() {
         }
 
         fetchComments()
-    }, [])
+    }, [props.pageIdentifier])
 
     
     const handleTextChange = (e) => setText(e.target.value);
@@ -45,7 +45,7 @@ export default function CommentSection() {
     
         
             try {
-                const response = await axios.post('/comments', {text}, {
+                const response = await axios.post('/comments', {text, page: props.pageIdentifier}, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     },

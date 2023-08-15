@@ -22,10 +22,10 @@ export default function Prologue() {
     <Sidebar items={kotorchapters} />
 
     <div className="walkthrough-container-body">
-      <TitleComponent title={"Star Wars: Knights of the old Republic Walkthrough"} />
-      <VideoPlayerComponent videoSrc={"https://www.youtube.com/embed/qlPJ6Av6S0c"} videoTitle={"starwars"} />
+      <TitleComponent title="Star Wars: Knights of the old Republic Walkthrough" />
+      <VideoPlayerComponent videoSrc={""} videoTitle="starwars" />
       <WalkthroughTextComponent content={content} />
-      <CommentSection />
+      <CommentSection pageIdentifier="/kotor/prologue" />
     </div>
 
     </div>
