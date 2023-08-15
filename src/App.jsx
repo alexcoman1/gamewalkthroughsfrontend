@@ -10,8 +10,11 @@ import { UserContextProvider } from '../context/userContext'
 import Dashboard from './pages/Dashboard'
 import CommentSection from './components/CommentSection'
 import Logout from './components/Logout'
+
 import Kotor from './pages/kotor/Kotor'
-import Prologue from './pages/kotor/Prologue'
+import Chapter1 from './pages/kotor/Chapter1'
+
+import Cyberpunk from './pages/cyberpunk/cyberpunk'
 
 
 
@@ -34,7 +37,9 @@ function App() {
         <Route path="/logout" element={<Logout />} />
 
         <Route path="/kotor" element={<Kotor />} />
-        <Route path="/kotor/prologue" element={<Prologue />} />
+        <Route path="/kotor/chapter1" element={<Chapter1 />} />
+        
+        <Route path="/cyberpunk" element={<Cyberpunk />} />
         
         
       </Routes>

@@ -6,8 +6,8 @@ import WalkthroughTextComponent from "../../components/WalkthroughTextComponent"
 
 export default function Kotor() {
   const kotorchapters = [
-    {name: 'Character Creation', link: '/kotor'},
-    {name: 'Prologue', link:'/kotor/prologue'}
+    {name: 'Prologue', link: '/kotor'},
+    {name: 'Chapter 1', link:'/kotor/chapter1'}
     
   ]
   const content = (

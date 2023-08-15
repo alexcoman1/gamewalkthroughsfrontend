@@ -4,10 +4,10 @@ import TitleComponent from "../../components/TitleComponent"
 import VideoPlayerComponent from "../../components/VideoPlayerComponent"
 import WalkthroughTextComponent from "../../components/WalkthroughTextComponent"
 
-export default function Prologue() {
+export default function Chapter1() {
   const kotorchapters = [
-    {name: 'Character Creation', link: '/kotor'},
-    {name: 'Prologue', link:'/kotor/prologue'}
+    {name: 'Prologue', link: '/kotor'},
+    {name: 'Chapter 1', link:'/kotor/chapter1'}
     
   ]
   const content = (
@@ -22,10 +22,10 @@ export default function Prologue() {
     <Sidebar items={kotorchapters} />
 
     <div className="walkthrough-container-body">
-      <TitleComponent title="Star Wars: Knights of the old Republic Walkthrough" />
+      <TitleComponent title="Chapter 1" />
       <VideoPlayerComponent videoSrc={""} videoTitle="starwars" />
       <WalkthroughTextComponent content={content} />
-      <CommentSection pageIdentifier="/kotor/prologue" />
+      <CommentSection pageIdentifier="/kotor/chapter1" />
     </div>
 
     </div>
