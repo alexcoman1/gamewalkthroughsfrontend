@@ -8,9 +8,12 @@ import axios from 'axios'
 import { Toaster } from 'react-hot-toast'
 import { UserContextProvider } from '../context/userContext'
 import Dashboard from './pages/Dashboard'
-import Kotor from './pages/kotor/Kotor'
 import CommentSection from './components/CommentSection'
 import Logout from './components/Logout'
+import Kotor from './pages/kotor/Kotor'
+import Prologue from './pages/kotor/Prologue'
+
+
 
 
 axios.defaults.baseURL = "https://gamewalkthroughs-api.onrender.com"
@@ -27,9 +30,11 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Dashboard />} />
-        <Route path="/kotor" element={<Kotor />} />
         <Route path="/comments/" element={<CommentSection />} />
         <Route path="/logout" element={<Logout />} />
+
+        <Route path="/kotor" element={<Kotor />} />
+        <Route path="/kotor/prologue" element={<Prologue />} />
         
         
       </Routes>
