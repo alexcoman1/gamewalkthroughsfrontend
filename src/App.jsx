@@ -19,7 +19,7 @@ import Cyberpunk from './pages/cyberpunk/Cyberpunk'
 
 
 
-axios.defaults.baseURL = "https://gamewalkthroughs.onrender.com"
+axios.defaults.baseURL = "https://gamewalkthroughs-api.onrender.com"
 axios.defaults.withCredentials = true
 
 
