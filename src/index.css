@@ -29,7 +29,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    
+    margin-bottom: 10px;
     background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(63, 63, 63) 100%);
     
 
@@ -64,7 +64,7 @@ nav .button:active {
     width: 100%;
     padding: 10px;
     font-size: 20px;
-    text-shadow: 4px 4px 6px rgb(165, 14, 14);
+    text-shadow: 4px 4px 6px rgba(255, 255, 255, 0.068);
     text-transform: uppercase;
     
 }
@@ -194,7 +194,7 @@ ul {
     width: 100%;
     height: 600px;
     border-radius: 5px;
-    margin: 20px;
+    margin-bottom: 10px;
 }   
 
 .videoplayer iframe {
@@ -228,18 +228,7 @@ ul {
     text-shadow: 1px 1px 15px #000000;
 }
 
-.comment-section {
-    width: 80%;
-    margin: auto;
-    margin-top: 20px;
-    
-}
 
-.comment {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-}
 
 input, textarea {
     display: block;
@@ -322,9 +311,10 @@ button {
   }
   
   .user-info {
-    background-color: #f7f7f7;
+    background-color: transparent;
     padding: 20px;
     border-radius: 5px;
+
   }
   
   .edit-profile-btn {
@@ -332,6 +322,7 @@ button {
     color: white;
     border: none;
     padding: 10px;
+    margin: 10px;
     border-radius: 5px;
     cursor: pointer;
   }
@@ -342,19 +333,63 @@ button {
 
   .comment-section {
     padding: 20px;
-  }
-  
-  .comment-post {
-    background-color: #f7f7f7;
-    padding: 10px;
-    margin-bottom: 10px;
+    font-family: sans-serif;
     border-radius: 5px;
-  }
-  
-  .author-name {
-    font-weight: bold;
-  }
-  
-  .comment {
     margin-top: 10px;
-  }
+}
+
+.comment-input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.comment-input-container textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #d1d1d1;
+    background-color: #ffffff;
+}
+
+.post-comment-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.post-comment-btn:hover {
+    background-color: #0056b3;
+}
+
+.comment-post {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ffffff79;
+    border-radius: 5px;
+    border: 1px solid #990d0d;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.author-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.delete-btn {
+    margin-top: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}

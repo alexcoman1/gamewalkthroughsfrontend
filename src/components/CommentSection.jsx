@@ -91,21 +91,18 @@ export default function CommentSection(props) {
         <div className="comment-section">
             <h3>Comments</h3>
             
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className='comment-input-container'>
                 <textarea placeholder="Comment" value={text} onChange={handleTextChange} required />
-                <button type="submit">Post Comment</button>
+                <button type="submit" className='post-comment-btn'>Post Comment</button>
             </form>
             {comments.slice().reverse().map((comment, index) => (
                 <div key={comment._id} className="comment-post">
 
-                    {console.log("Comment author ID:", comment.author && comment.author._id)}
-                    {console.log("User ID from context:", user && user._id)}
-                    {console.log("User object from context:", user)}
-
+                    
                     <p className="author-name">{comment.author ? comment.author.name : 'Anonymous'}</p>
                     <CommentPost {...comment} />
                     {comment.author && user && comment.author._id === user.id && (
-                        <button onClick={() => handleDelete(comment._id)}>Delete</button>
+                        <button className="delete-btn" onClick={() => handleDelete(comment._id)}>Delete</button>
                     )}
                 </div>
                 

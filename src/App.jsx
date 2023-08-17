@@ -11,16 +11,15 @@ import Dashboard from './pages/Dashboard'
 import CommentSection from './components/CommentSection'
 import Logout from './components/Logout'
 
-import Kotor from './pages/kotor/Kotor'
-import Chapter1 from './pages/kotor/Chapter1'
+import Kotor from './pages/Kotor'
 
 import Cyberpunk from './pages/cyberpunk/Cyberpunk'
 
-import GameWalkthrough from './components/GameWalkthrough'
 
 
 
-axios.defaults.baseURL = "https://gamewalkthroughs-api.onrender.com"
+
+axios.defaults.baseURL = "http://localhost:8000"
 axios.defaults.withCredentials = true
 
 
@@ -38,7 +37,6 @@ function App() {
         <Route path="/logout" element={<Logout />} />
 
         <Route path="/kotor" element={<Kotor />} />
-        <Route path="/kotor/chapter1" element={<Chapter1 />} />
 
         <Route path="/cyberpunk" element={<Cyberpunk />} />
       
