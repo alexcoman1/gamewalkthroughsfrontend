@@ -16,6 +16,7 @@ import Chapter1 from './pages/kotor/Chapter1'
 
 import Cyberpunk from './pages/cyberpunk/Cyberpunk'
 
+import GameWalkthrough from './components/GameWalkthrough'
 
 
 
@@ -40,6 +41,8 @@ function App() {
         <Route path="/kotor/chapter1" element={<Chapter1 />} />
 
         <Route path="/cyberpunk" element={<Cyberpunk />} />
+
+        
         
         
       </Routes>

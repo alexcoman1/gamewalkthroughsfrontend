@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidebar from "./Sidebar"
 import CommentSection from "./CommentSection"
 import TitleComponent from "./TitleComponent";
@@ -7,7 +7,10 @@ import WalkthroughTextComponent from './WalkthroughTextComponent';
 
 
 export default function GameWalkthrough({ gameTitle, chapters, videoSrc }) {
+  
   const [currentChapter, setCurrentChapter] = useState(chapters[0].name);
+
+
 
   return (
     <div className="walkthrough-container">
