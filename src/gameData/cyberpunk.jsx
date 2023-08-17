@@ -4,6 +4,7 @@ export default {
     chapters: [
     {
       name: "Prologue",
+      
       link: "/cyberpunk/prologue",
       videoSrc: "path_to_video",
       content: <div>Prologue content here</div>

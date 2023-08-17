@@ -9,6 +9,8 @@ import WalkthroughTextComponent from './WalkthroughTextComponent';
 export default function GameWalkthrough({ gameTitle, chapters, videoSrc }) {
   
   const [currentChapter, setCurrentChapter] = useState(chapters[0].name);
+  const currentChapterContent = chapters.find(chapter => chapter.name === currentChapter).content
+
 
 
 
@@ -16,9 +18,9 @@ export default function GameWalkthrough({ gameTitle, chapters, videoSrc }) {
     <div className="walkthrough-container">
       <Sidebar items={chapters} onChapterClick={setCurrentChapter} />
       <div className="walkthrough-container-body">
-        <TitleComponent title={gameTitle} />
+        <TitleComponent title={`${gameTitle} - ${currentChapter}`} />
         <VideoPlayerComponent videoSrc={videoSrc} videoTitle={gameTitle} />
-        {chapters.find(chapter => chapter.name === currentChapter).content}
+        <WalkthroughTextComponent content={currentChapterContent} />
         <CommentSection pageIdentifier={`/${gameTitle}/${currentChapter}`} />
       </div>
     </div>
