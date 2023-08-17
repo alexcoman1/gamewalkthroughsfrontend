@@ -35,9 +35,15 @@ export default function Dashboard() {
     if (loading) return <div>Loading...</div>;
 
     return (
-        <div>
-            <h1>Profile</h1>
-            {!!user && (<h2>Hi {user.name}</h2>)}
+        <div className="dashboard-container">
+            <h1 className="dashboard-title">Profile</h1>
+            {!!user && (
+                <div className="user-info">
+                <h2>Hi {user.name}</h2>
+                <p>Email: {user.email}</p>
+                <button className="edit-profile-btn">Edit Profile</button>
+                </div>
+            )}
         </div>
     );
 }

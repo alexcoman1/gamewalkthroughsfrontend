@@ -11,7 +11,9 @@ export default function GameWalkthrough({ gameTitle, chapters, videoSrc }) {
   const [currentChapter, setCurrentChapter] = useState(chapters[0].name);
   const currentChapterContent = chapters.find(chapter => chapter.name === currentChapter).content
 
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+ }, [currentChapter]);
 
 
   return (
